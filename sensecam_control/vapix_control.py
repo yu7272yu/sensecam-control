@@ -8,7 +8,7 @@ import requests
 from requests.auth import HTTPDigestAuth
 from bs4 import BeautifulSoup
 
-logging.basicConfig(filename='vapix.log', filemode='w', level=logging.DEBUG)
+# logging.basicConfig(filename='vapix.log', filemode='w', level=logging.DEBUG)
 logging.info('Started')
 
 # pylint: disable=R0904
@@ -280,7 +280,7 @@ class CameraControl:
         resp_presets = soup.text.split('\n')
         presets = []
 
-        for i in range(1, len(resp_presets)-1):
+        for i in range(1, len(resp_presets) - 1):
             preset = resp_presets[i].split("=")
             presets.append((int(preset[0].split('presetposno')[1]), preset[1].rstrip('\r')))
 
